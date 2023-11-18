@@ -1,0 +1,12 @@
+{
+  "name": "lazy-launch-app",
+  "version": "1.0.0",
+  "description": "this application is for experiments that requires long launch time.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
