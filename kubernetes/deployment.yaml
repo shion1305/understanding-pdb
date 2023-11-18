@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: slow-start-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: slow-start
+  template:
+    metadata:
+      labels:
+        app: slow-start
+    spec:
+      containers:
+      - name: web
+        image: [あなたのイメージ]
+        ports:
+        - containerPort: 8080
