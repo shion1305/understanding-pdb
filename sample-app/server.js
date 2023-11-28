@@ -1,9 +1,13 @@
+// 起動遅延（ミリ秒）
+const startupDelay = process.env.STARTUP_DELAY || 10000;
+
 const http = require('http');
 
-// 起動遅延（ミリ秒）
-const startupDelay = 10000;
-
 const requestHandler = (request, response) => {
+    if (request.url === '/health') {
+        response.end('OK');
+        return;
+    }
     console.log(request.url);
     response.end('Hello Node.js Server!');
 };
@@ -15,7 +19,6 @@ setTimeout(() => {
         if (err) {
             return console.log('something bad happened', err);
         }
-
         console.log(`server is listening on 8080`);
     });
     }, startupDelay);
